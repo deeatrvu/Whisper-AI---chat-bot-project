@@ -58,14 +58,13 @@ if st.button("Send"):
 
         # Get AI response
         response = openai.Completion.create(
-            model="gpt-3.5-turbo",  # Use the appropriate chat-based model
-            messages=[
-                {"role": "user", "content": user_input}
-            ],
-            max_tokens=500,
+            engine="davinci",  # Use the appropriate engine
+            prompt=user_input,
+            max_tokens=150,
             temperature=0.9,
+            stop="\n"
         )
-        ai_response = response.choices[0].message.content.strip()
+        ai_response = response.choices[0].text.strip()
 
         # Add AI response to conversation history under "ChatGPT:"
         st.session_state.conversation_history.append("ChatGPT: " + ai_response)
