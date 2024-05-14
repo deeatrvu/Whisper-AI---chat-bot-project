@@ -57,7 +57,7 @@ if st.button("Send"):
         st.session_state.conversation_history.append("You: " + user_input)
 
         # Get AI response
-        response = openai.ChatCompletion.create(
+        response = openai.Completion.create(
             model="gpt-3.5-turbo",  # Use the appropriate chat-based model
             messages=[
                 {"role": "user", "content": user_input}
