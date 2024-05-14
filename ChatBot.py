@@ -4,7 +4,7 @@ import subprocess
 import importlib
 
 # Set the desired OpenAI version
-desired_openai_version = "0.28.0"
+desired_openai_version = "1.0.0"
 
 # Check if the installed OpenAI version matches the desired version
 if openai.__version__ != desired_openai_version:
